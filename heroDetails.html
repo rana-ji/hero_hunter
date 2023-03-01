@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- adding cdd files -->
+    <link rel="stylesheet" href="./css/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a class="favourite-heroes" href="./index.html">HOME</a>
+      <!-- hero detail wrapper -->
+      <div class="favourite-heroes-wrapper">
+        <div>
+          <img class="heroImage" src="" alt="" id="photo" />
+        </div>
+        <div class="hero-detail-wrapper">
+          <h1 id="name"></h1>
+          <p>Comics :</p>
+          <ul id="comics"></ul>
+          <p>Series :</p>
+          <ul id="series"></ul>
+          <p>Stories :</p>
+          <ul id="stories"></ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- adding js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script src="./js/heroDetails.js"></script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperHero Hunter</title>
+    <!-- adding css files -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./css/global.css" />
+  </head>
+  <body>
+    <div class="container">
+      <a href="./favHeroes.html" class="favourite-heroes">My Favourite List</a>
+      <p id="main-heading">Marvel Hero Hunter</p>
+    </div>
+    <!-- search input  -->
+    <div id="data-container">
+      <input
+        type="search"
+        name="searchHero"
+        id="searchHero"
+        placeholder="Search here (min. 3 characters)"
+      />
+      <!-- result container -->
+      <ul id="searchResults"></ul>
+    </div>
+    <!-- adding js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
