@@ -1,14 +1,17 @@
+// getting the containers
 const searchHero = document.getElementById("searchHero");
 const searchResults = document.getElementById("searchResults");
 
+// initializing the empty array for favourite heros
 var favourite_buttons = [];
+
+// creating the hash for the fetch api
 const ts = "1";
 const private_ = "5f227b1c33467cbb689a529cca037ecd32bf3882";
 const public_ = "621b0b4e5aba8be1baeaa4e10bec37e9";
-
 var hash = CryptoJS.MD5(`${ts + private_ + public_}`);
 
-// for fetching the api thorugh xhr request
+// reading the type user input
 searchHero.addEventListener("keyup", async function () {
   var searchValue = this.value;
   if (searchValue.length <= 2) {
@@ -16,13 +19,16 @@ searchHero.addEventListener("keyup", async function () {
     return;
   } else {
     searchResults.innerHTML = "";
+    //sending fetch request and  getting the list of heros based on user input
     await fetch(
       `https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=621b0b4e5aba8be1baeaa4e10bec37e9&hash=${hash}&nameStartsWith=${searchValue}`
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
+        console.log(data);
         const results = data.data.results;
+
+        // looping the data and appending it to the div
         for (let i of results) {
           var li = document.createElement("li");
           li.classList.add("search-item");
@@ -46,6 +52,7 @@ searchHero.addEventListener("keyup", async function () {
             '"><i id="addFav" class="fa fa-heart"></i></div>';
           searchResults.appendChild(li);
         }
+        // reading the click for the specific hero detail
         let resultHeros = document.getElementsByClassName("searchResults");
         for (let j of resultHeros) {
           j.addEventListener("click", function (event) {
@@ -56,7 +63,7 @@ searchHero.addEventListener("keyup", async function () {
           });
         }
 
-        // adding suerhero to the fav list
+        // adding hero to the fav list
         favourite_buttons = document.getElementsByClassName("add");
         for (let i of favourite_buttons) {
           i.addEventListener("click", function () {

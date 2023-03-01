@@ -1,3 +1,4 @@
+// getting the div
 const favHeroContainer = document.getElementById("fav-hero-container");
 const body = document.getElementsByTagName("body")[0];
 var favHeroes = JSON.parse(localStorage.getItem("favHeroes"));
